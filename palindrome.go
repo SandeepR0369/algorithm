@@ -6,7 +6,6 @@ import (
 )
 
 var str string
-var n int
 
 func main() {
 	fmt.Print("Please Enter the text you want to check: ")
