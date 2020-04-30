@@ -14,6 +14,12 @@ func main() {
 	z1 := Missing([]int{2, 3, 4, 11, 13})
 	fmt.Println(z1)
 
+	z2 := Missing([]int{3, 0, 3, 1, 4})
+	fmt.Println(z2)
+
+	z3 := Missing([]int{3, 0, 2, 1, 4})
+	fmt.Println(z3)
+
 }
 
 //find the first missing positive integer in linear time and constant space
@@ -32,13 +38,17 @@ func Missing(numbers []int) int {
 	}
 
 	for _, _ = range j {
-		for m := 0; m <= len(j)-1; m++ {
+		for m := 0; m < len(j)-1; m++ {
 			if j[m+1]-j[m] == 1 {
 				continue
 			} else if j[m+1]-j[m] > 1 {
 				return j[m] + 1
 			}
 		}
+		if j[len(j)-1]-j[len(j)-1-1] == 1 {
+			return j[len(j)-1] + 1
+		}
 	}
 	return 0
 }
+
