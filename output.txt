@@ -1,0 +1,1 @@
+Please Enter the text you want to check: malayalam is Pallindrome
