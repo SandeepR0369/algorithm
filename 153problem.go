@@ -14,40 +14,57 @@ func main() {
 	fmt.Println(a1)
 }
 
-func distance(str, d, e string) int {
 
+func distance(str, d, e string) int {
+	var index1, index2 []int
+	if d == e {
+		return 0
+	}
+	b := strings.Split(str, " ")
+	for m, _ := range b {
+		if b[m] == d {
+			index1 = append(index1, m)
+		}
+		if b[m] == e {
+			index2 = append(index2, m)
+		}
+	}
+
+	var fin []int
+
+	for i := 0; i <= len(index1)-1; i++ {
+		for j := 0; j <= len(index2)-1; j++ {
+			fin = append(fin, index2[j]-index1[i])
+		}
+	}
+	sort.Ints(fin)
+	return fin[0] - 1
+}
+
+func Absolutedistance(str, d, e string) float64 {
+	var index1, index2 []int
 	if d == e {
 		return 0
 	}
 
 	b := strings.Split(str, " ")
 
-
 	for m, _ := range b {
 		if b[m] == d {
 			index1 = append(index1, m)
 		}
-		if b[m] == e{
+		if b[m] == e {
 			index2 = append(index2, m)
 		}
-		
 	}
-	
 
-	for i, _ := range b {
-
-		if b[i] == d {
-			fmt.Println(i,d)
+	var fin []float64
+	for i := 0; i <= len(index1)-1; i++ {
+		for j := 0; j <= len(index2)-1; j++ {
+			fin = append(fin, math.Abs(float64(index2[j]-index1[i])))
 		}
 
-		if b[i] == d {
-			for m, _ := range b {
-
-				if b[m] == e {
-					return m - i - 1
-				}
-			}
-		}
 	}
-	return 0
+	sort.Float64s(fin)
+	return fin[0] - 1
 }
