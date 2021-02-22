@@ -47,7 +47,7 @@ func IsEven(n int) bool {
 
 func Split(m int) int {
 	count := 0
-	for m != 0 {
+	for m != 0 {	
 		m = m / 10
 		count += 1
 	}

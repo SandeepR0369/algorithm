@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 )
-									//TYPE 1
+//TYPE 1
 func main() {
 	var rows int
 	fmt.Print("Enter the rows no: ")
@@ -15,7 +15,7 @@ func main() {
 	}
 }
 
-									//TYPE 2
+//TYPE 2
 /*										
 func main() {
 	var rows int
@@ -30,7 +30,7 @@ func main() {
 	}
 }
 */
-									//TYPE 3
+//TYPE 3
 /*
 func main() {
 	var rows int
