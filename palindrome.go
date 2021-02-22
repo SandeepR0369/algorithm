@@ -32,7 +32,7 @@ func reversal(ac string) string {
 
 func palindrome(ac string) bool {
 	//if strings.ToUpper(ac) == strings.ToUpper(reversal(str)){   //This is also correct
-	r_str := reversal(str)
+	r_str := reversal(ac)
 	if strings.EqualFold(r_str, ac) {
 		return true
 	}
