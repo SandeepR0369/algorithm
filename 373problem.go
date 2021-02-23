@@ -11,7 +11,7 @@ import (
 func main() {
 	fmt.Println(consecutive([]int{5, 2, 99, 3, 4, 1, 100, 98, 97, 96, 95}))
 }
-
+/*
 func consecutive(arr []int) int {
 
 	sort.Ints(arr)
@@ -27,5 +27,38 @@ func consecutive(arr []int) int {
 		}
 	}
 	return len(ar2)
+
+}
+*/
+func consecutive(arr []int) int {
+
+	sort.Ints(arr)
+	fmt.Println(arr)
+
+	temp := make(map[int]int)
+	res := 0
+	for i := 1; i < len(arr); i++ {
+		fmt.Println(i, arr[i])
+
+		r := arr[i] - arr[i-1]
+		if r == 1 {
+			temp[arr[i]] = 0
+			temp[arr[i-1]] = 0
+		} else {
+			//fmt.Println(temp)
+			if len(temp) > res {
+				res = len(temp)
+			}
+			temp = make(map[int]int)
+		}
+
+	}
+
+	fmt.Println(temp)
+	if len(temp) > res {
+		res = len(temp)
+	}
+
+	return res
 
 }
