@@ -1,0 +1,14 @@
+package main
+
+import (
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/hello", getHello)
+	http.ListenAndServe(":8081", nil)
+}
+
+func getHello(res http.ResponseWriter, t *http.Request) {
+	res.Write([]byte("Hello World"))
+}
