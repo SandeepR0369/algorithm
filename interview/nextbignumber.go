@@ -47,3 +47,45 @@ func rearrange(a []int) []int {
 	return []int{}
 
 }
+
+/*
+func main() {
+	fmt.Println(rearrange(51432))
+
+}
+
+func rearrange(a int) []int {
+
+	b := strconv.Itoa(a)
+
+	c := strings.Split(b, "")
+
+	sli := make([]int, len(c))
+
+	for i := range c {
+		sli[i], _ = strconv.Atoi(c[i])
+	}
+	
+	swap := 0
+	for j := len(sli) - 1; j >= 1; j-- {
+
+		if sli[j] < sli[j-1] {
+			continue
+		}
+		if sli[j] > sli[j-1] {
+			sli[j], sli[j-1] = sli[j-1], sli[j]
+			sort.Ints(sli[j:])
+			swap += 1
+
+		}
+
+		if swap == 1 {
+			return sli
+		}
+
+	}
+
+	return []int{}
+
+}
+*/
