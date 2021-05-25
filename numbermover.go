@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 )
-
+//https://play.golang.org/p/0mk5y5HJrqb
 func main() {
 	fmt.Println(Numbermover([]int{6, 0, 8, 2, 3, 0, 4, 0, 1}, 0))
 	fmt.Println(Numbermover([]int{6, 0, 8, 2, 3, 0, 4, 0, 1}, 6))
