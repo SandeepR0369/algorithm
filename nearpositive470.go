@@ -1,13 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
-	fmt.Println(Nearestpositiveindex([]int{4, 1, 3, 5, 6}, 0))
+	fmt.Println(Nearestpositiveindex([]int{4, 99, 1, 18, 3, 6, 21}, 5))
 }
-
-//https://play.golang.org/p/a6nfZ9qU1eN
+//https://play.golang.org/p/xT2noYnqSzH
 
 //Given an array of numbers and an index i, return the index of the nearest larger number of the number at index i, where distance is measured in array indices.
 //For example, given [4, 1, 3, 5, 6] and index 0, you should return 3.
@@ -17,16 +18,14 @@ func Nearestpositiveindex(sli []int, target int) int {
 
 	var sli2 []int
 	for i := 0; i < len(sli); i++ {
-		if i == target {
+		/*if i == target {
 			sli2 = append(sli2, 0)
 			continue
-		}
+		}*/
 
 		if sli[i]-sli[target] > 0 || sli[i]-sli[target] <= 0 {
 			sli2 = append(sli2, sli[i]-sli[target])
-
 		}
-
 	}
 
 	return leastpositive(sli2)
@@ -35,12 +34,8 @@ func Nearestpositiveindex(sli []int, target int) int {
 
 func leastpositive(sli3 []int) int {
 
-	for j := 1; j < len(sli3); j++ {
+	for j := 1; j <= max(sli3); j++ {
 		for i := 0; i < len(sli3); i++ {
-
-			if i == j {
-				continue
-			}
 
 			if sli3[i] == j {
 				return i
@@ -50,3 +45,17 @@ func leastpositive(sli3 []int) int {
 	return 0
 
 }
+
+func max(sli []int) int {
+
+	a := sli[0]
+
+	for _, v := range sli {
+		if v > a {
+			a = v
+		}
+	}
+
+	return a
+}
+
