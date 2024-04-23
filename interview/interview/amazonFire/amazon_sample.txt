@@ -1,0 +1,33 @@
+fireData := map[string]map[string]int{
+    "2021": {
+        "California": map[string]int{
+            "January": 10,
+            "February": 15,
+            "March": 20,
+            // Other months...
+        },
+        "Oregon": map[string]int{
+            "January": 8,
+            "February": 12,
+            "March": 18,
+            // Other months...
+        },
+        // Other states...
+    },
+    "2022": {
+        "California": map[string]int{
+            "January": 5,
+            "February": 10,
+            "March": 15,
+            // Other months...
+        },
+        "Oregon": map[string]int{
+            "January": 7,
+            "February": 9,
+            "March": 14,
+            // Other months...
+        },
+        // Other states...
+    },
+    // Other years...
+}
